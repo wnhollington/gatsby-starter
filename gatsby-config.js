@@ -8,7 +8,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        "trackingId": "123"
+        "trackingId": "123" // Update
       }
     }, 
     "gatsby-plugin-image", 
@@ -38,6 +38,14 @@ module.exports = {
         "path": "./src/pages/"
       },
       __key: "pages"
-    }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "articles",
+        "path": "./.frontmatter/content/articles"
+      },
+      __key: "articles"
+    },
   ]
 };
