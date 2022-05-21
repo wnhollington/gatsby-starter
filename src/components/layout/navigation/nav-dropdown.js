@@ -1,8 +1,9 @@
 import * as React from 'react'
 import { useState } from 'react';
+import { Link } from 'gatsby';
 
 // Components
-import Logo from './logo'
+import Logo from '../header/logo'
 
 const NavDropdown = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -54,44 +55,34 @@ const NavDropdown = () => {
                 <nav>
                     <ul className="space-y-4">
                     <li>
-                        <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
+                        <Link
+                        to="/about"
+                        aria-label="About"
+                        title="About"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
-                        Product
-                        </a>
+                        About
+                        </Link>
                     </li>
                     <li>
-                        <a
-                        href="/"
-                        aria-label="Our product"
-                        title="Our product"
+                        <Link
+                        to="/blog"
+                        aria-label="Blog"
+                        title="Blog"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
-                        Features
-                        </a>
+                        Blog
+                        </Link>
                     </li>
                     <li>
-                        <a
-                        href="/"
-                        aria-label="Product pricing"
-                        title="Product pricing"
+                        <Link
+                        to="/contact"
+                        aria-label="Contact"
+                        title="Contact"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
                         >
-                        Pricing
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                        href="/"
-                        aria-label="About us"
-                        title="About us"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
-                        >
-                        About us
-                        </a>
+                        Contact
+                        </Link>
                     </li>
                     </ul>
                 </nav>

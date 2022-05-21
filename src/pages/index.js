@@ -1,11 +1,12 @@
 import * as React from 'react'
+import { Link } from 'gatsby'
 
 // Components
 import Layout from '../components/layout'
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page">
+    <Layout>
 
       {/* Hero */}
       <section className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -36,8 +37,8 @@ const IndexPage = () => {
               >
                 Subscribe
               </button>
-              <a
-                href="/"
+              <Link
+                to="/about"
                 aria-label=""
                 className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800"
               >
@@ -49,7 +50,7 @@ const IndexPage = () => {
                 >
                   <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
           <div>
@@ -94,7 +95,7 @@ const IndexPage = () => {
             posts
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
-            See our most recent employment articles below.
+            See our most recent articles below.
           </p>
         </div>
         <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
@@ -196,12 +197,12 @@ const IndexPage = () => {
 
         </div>
         <div className="text-center">
-          <a
-            href="/"
+          <Link
+            to="/blog"
             className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
           >
             View All
-          </a>
+          </Link>
         </div>
       </section>
 
@@ -209,7 +210,7 @@ const IndexPage = () => {
       <section class="bg-gray-100 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
           <div class="lg:flex lg:items-center lg:justify-between">
               <h2 class="text-3xl font-semibold tracking-tight text-gray-800 xl:text-4xl">
-                  Join us and get the update from anywhere
+                  Subscribe to get legal updates directly to your inbox.
               </h2>
               
               <div class="mt-8 lg:mt-0">
@@ -221,7 +222,7 @@ const IndexPage = () => {
                       </button>
                   </div>
 
-                  <p class="mt-3 text-sm text-gray-500">Attention! Offer expires in 30 days. Make sure not to miss this opportunity</p>
+                  <p class="mt-3 text-sm text-gray-500">You will not be spammed and your information will never be sold.  You can always unsubscribe.</p>
               </div>
           </div>
       </section>

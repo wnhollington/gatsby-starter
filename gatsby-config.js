@@ -47,5 +47,13 @@ module.exports = {
       },
       __key: "articles"
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        "name": "mdx-pages",
+        "path": "./.frontmatter/content/pages"
+      },
+      __key: "mdx-pages"
+    },
   ]
 };
