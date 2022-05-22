@@ -16,8 +16,7 @@ export default function Search({ indices }) {
   )
 
   const MenuSelect = ({ items, currentRefinement, refine }) => (
-
-    <section class="bg-gray-100 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <section class="bg-gray-100 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20 mb-4">
       <div class="lg:flex lg:items-center lg:justify-center">
           <h2 class="text-3xl font-semibold tracking-tight text-gray-800 xl:text-4xl">
               I want to learn about
