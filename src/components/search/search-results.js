@@ -1,20 +1,9 @@
 import { Link } from "gatsby"
 import { default as React } from "react"
 import {
-  connectStateResults,
   Hits,
   Index,
 } from "react-instantsearch-dom"
-
-const HitCount = connectStateResults(({ searchResults }) => {
-  const hitCount = searchResults && searchResults.nbHits
-
-  return hitCount > 0 ? (
-    <div className="HitCount">
-      {hitCount} result{hitCount !== 1 ? `s` : ``}
-    </div>
-  ) : null
-})
 
 const PageHit = ({ hit }) => (
   <Link
@@ -44,7 +33,6 @@ const PageHit = ({ hit }) => (
 
 const HitsInIndex = ({ index }) => (
   <Index indexName={index.name}>
-    <HitCount />
     <Hits hitComponent={PageHit} />
   </Index>
 )
