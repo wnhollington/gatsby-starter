@@ -14,3 +14,8 @@
 }
 @tailwind components;
 @tailwind utilities;
+
+/* Custom CSS */
+.ais-Hits-list {
+    @apply grid gap-4 mb-8 lg:grid-cols-3 sm:grid-cols-2;
+}

@@ -1,10 +1,12 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 // Components
 import Layout from '../components/layout'
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  // Featured Articles
+  const articles = data.allMdx.edges
   return (
     <Layout>
 
@@ -98,103 +100,38 @@ const IndexPage = () => {
             See our most recent articles below.
           </p>
         </div>
-        <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
-          <a
-            href="/"
-            aria-label="View Item"
-            className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
-          >
-            <div className="flex flex-col h-full">
-              <img
-                src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                className="object-cover w-full h-48"
-                alt=""
-              />
-              <div className="flex-grow border border-t-0 rounded-b">
-                <div className="p-5">
-                  <h6 className="mb-2 font-semibold leading-5">
-                    The doctor said
-                  </h6>
-                  <p className="text-sm text-gray-900">
-                    Sportacus andrew weatherall goose Refined gentlemen super
-                    mario des lynam alpha trion zap rowsdower.
-                  </p>
+        <div className="grid gap-5 row-gap-5 mb-8 lg:grid-cols-3 sm:grid-cols-2">
+          {articles.map(({ node })=>{
+            const title = node.frontmatter.title
+            const slug = node.frontmatter.slug
+            const img = node.frontmatter.img
+            const description = node.frontmatter.description
+            return (
+              <Link
+                to={`/blog/${slug}`}
+                aria-label="View Item"
+                className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
+              >
+                <div className="flex flex-col h-full">
+                  <img
+                    src={img}
+                    className="object-cover w-full h-48"
+                    alt={title}
+                  />
+                  <div className="flex-grow border border-t-0 rounded-b">
+                    <div className="p-5">
+                      <h6 className="mb-2 font-semibold leading-5">
+                        {title}
+                      </h6>
+                      <p className="text-sm text-gray-900">
+                        {description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </a>
-          <a
-            href="/"
-            aria-label="View Item"
-            className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
-          >
-            <div className="flex flex-col h-full">
-              <img
-                src="https://images.pexels.com/photos/3182750/pexels-photo-3182750.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                className="object-cover w-full h-48"
-                alt=""
-              />
-              <div className="flex-grow border border-t-0 rounded-b">
-                <div className="p-5">
-                  <h6 className="mb-2 font-semibold leading-5">
-                    Skate ipsum dolor
-                  </h6>
-                  <p className="text-sm text-gray-900">
-                    Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            href="/"
-            aria-label="View Item"
-            className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
-          >
-            <div className="flex flex-col h-full">
-              <img
-                src="https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                className="object-cover w-full h-48"
-                alt=""
-              />
-              <div className="flex-grow border border-t-0 rounded-b">
-                <div className="p-5">
-                  <h6 className="mb-2 font-semibold leading-5">They urge you</h6>
-                  <p className="text-sm text-gray-900">
-                    A flower in my garden, a mystery in my panties. Heart attack
-                    never stopped old Big Bear.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-          <a
-            href="/"
-            aria-label="View Item"
-            className="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2"
-          >
-            <div className="flex flex-col h-full">
-              <img
-                src="https://images.pexels.com/photos/3184296/pexels-photo-3184296.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
-                className="object-cover w-full h-48"
-                alt=""
-              />
-              <div className="flex-grow border border-t-0 rounded-b">
-                <div className="p-5">
-                  <h6 className="mb-2 font-semibold leading-5">
-                    Baseball ipsum dolor
-                  </h6>
-                  <p className="text-sm text-gray-900">
-                    Bro ipsum dolor sit amet gaper backside single track, manny
-                    Bike epic clipless. Schraeder drop gondy.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </a>
-
-
+              </Link>
+            )
+          })}
         </div>
         <div className="text-center">
           <Link
@@ -231,3 +168,25 @@ const IndexPage = () => {
 }
 
 export default IndexPage
+
+// Graphql call
+export const query = graphql`
+  query featuredArticles {
+    allMdx(
+      filter: {frontmatter: {type: {eq: "article"}}}
+      limit: 3
+      sort: {fields: frontmatter___lastmod, order: DESC}
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            slug
+            description
+            img
+          }
+        }
+      }
+    }
+  }
+`

@@ -12,6 +12,7 @@ const Article = ({ data, pageContext }) => {
   const lastmod = data.mdx.frontmatter.lastmod
   const description = data.mdx.frontmatter.author
   const author = data.mdx.frontmatter.author
+  const img = data.mdx.frontmatter.img
   const body = data.mdx.body
   const { previous, next } = pageContext
 
@@ -21,6 +22,10 @@ const Article = ({ data, pageContext }) => {
         <p>Last Modified: {lastmod}</p>
         <p>Author: {author}</p>
         <p>Description: {description}</p>
+        <img
+            src={img}
+            alt={title}
+        />
 
         <MDXRenderer>
             {body}
@@ -60,6 +65,7 @@ export const query = graphql`
             lastmod(formatString: "MMMM D, YYYY")
             description
             author
+            img
         }
         body
     }

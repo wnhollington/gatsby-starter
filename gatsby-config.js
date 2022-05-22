@@ -1,7 +1,12 @@
+require("dotenv").config({
+  path: `.env`,
+});
+
 module.exports = {
   siteMetadata: {
     title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.yourdomain.tld`,
+    description: ``
   },
   plugins: [
     "gatsby-plugin-postcss", 
@@ -15,11 +20,16 @@ module.exports = {
     "gatsby-plugin-react-helmet", 
     "gatsby-plugin-sitemap", 
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        "icon": "src/images/icon.png"
-      }
-    }, 
+        name: `My Gatsby Site`,
+        start_url: `/`,
+        background_color: `#f8f6f3`,
+        theme_color: `#2a4234`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
     "gatsby-plugin-mdx", 
     "gatsby-plugin-sharp", 
     "gatsby-transformer-sharp", 
@@ -55,5 +65,13 @@ module.exports = {
       },
       __key: "mdx-pages"
     },
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_ADMIN_KEY,
+        queries: require("./src/utils/algolia-queries")
+      },
+    }
   ]
 };
