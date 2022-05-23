@@ -18,7 +18,7 @@ const Article = ({ data, pageContext }) => {
 
   return (
     <Layout>
-        <header className="px-4 py-10 mx-auto sm:max-w-2xl md:max-w-full lg:max-w-screen-2xl md:px-24 lg:px-8 ">
+        <header className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 ">
             <div className="mx-auto sm:text-center lg:max-w-2xl">
                 <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
                     <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto text-center">
@@ -36,13 +36,13 @@ const Article = ({ data, pageContext }) => {
                         alt={title}
                     />
                 </div>
-                <p className="max-w-xl mb-4 text-base text-gray-700 sm:mx-auto">
+                <p className="text-base text-gray-700">
                 {description}
                 </p>
             </div>
         </header>
 
-        <article className=''>
+        <article className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-md md:px-24 lg:px-8 lg:py-10'>
             <MDXRenderer>
             {body}
             </MDXRenderer>
@@ -52,7 +52,7 @@ const Article = ({ data, pageContext }) => {
  
             <Link 
                 to={previous ? `/blog/${previous.frontmatter.slug}`: null} 
-                className={`inline-flex items-center py-2 px-4 mr-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${previous ? null :'cursor-not-allowed'}`}
+                className={`inline-flex items-center py-2 px-4 mr-3 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ${previous ? null :'cursor-not-allowed'}`}
                 aria-label={previous ? `${previous.frontmatter.title}` : 'There are no prior articles.'}
                 title={previous ? `${previous.frontmatter.title}` : 'There are no prior articles.'}
             >
@@ -62,7 +62,7 @@ const Article = ({ data, pageContext }) => {
 
             <Link 
                 to={next ? `/blog/${next.frontmatter.slug}` : null}  
-                className={`inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white ${next ? null : 'cursor-not-allowed'}`}
+                className={`inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 ${next ? null : 'cursor-not-allowed'}`}
                 aria-label={next ? `${next.frontmatter.title}` : 'You are all caught up! No new articles.'}
                 title={next ? `${next.frontmatter.title}` : 'You are all caught up! No new articles.'}
             >
