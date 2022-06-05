@@ -14,12 +14,9 @@ const Page = ({ data }) => {
   return (
     <Layout>
       {title === 'Disclaimer' || title === 'Privacy Policy' ? <><h1>{title}</h1> <p>Last Modified: {lastmod}</p></> : null}
-      <div className="max-w-screen-lg mx-auto">
-              <MDXRenderer>
-            {body}
-        </MDXRenderer>
-      </div>
-
+      <MDXRenderer>
+        {body}
+      </MDXRenderer>
     </Layout>
   )
 }
