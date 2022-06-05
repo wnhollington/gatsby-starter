@@ -1,10 +1,10 @@
 import React, {useState} from "react"
 
-const Modal = () => {
+const Modal = ({buttonClasses}) => {
     const [modalOpen, setModalOpen] = useState(false)
     return (
         <>
-            <button className="inline-flex items-center justify-center h-8 p-2 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-500 hover:bg-indigo-700 focus:shadow-outline focus:outline-none" type="button" data-modal-toggle="defaultModal" onClick={() => setModalOpen(!modalOpen)}>
+            <button className={buttonClasses} type="button" data-modal-toggle="defaultModal" onClick={() => setModalOpen(!modalOpen)}>
             Subscribe
             </button>
 

@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby'
 
 // Components
 import Layout from '../components/layout'
+import Modal from '../components/elements/modal'
 
 const IndexPage = ({ data }) => {
   // Featured Articles
@@ -33,12 +34,7 @@ const IndexPage = ({ data }) => {
               </p>
             </div>
             <div className="grid gap-5 row-gap-8 sm:grid-cols-2">
-              <button
-                type="submit"
-                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-400 hover:bg-indigo-700 focus:shadow-outline focus:outline-none"
-              >
-                Subscribe
-              </button>
+              <Modal buttonClasses="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-400 hover:bg-indigo-700 focus:shadow-outline focus:outline-none" />
               <Link
                 to="/about"
                 aria-label=""
