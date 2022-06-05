@@ -1,9 +1,13 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
+import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 // Components
 import Layout from '../components/layout'
+import ContactForm from '../components/elements/contact-form'
+
+const shortcodes = { ContactForm }
 
 // Render
 const Page = ({ data }) => {
@@ -14,9 +18,9 @@ const Page = ({ data }) => {
   return (
     <Layout>
       {title === 'Disclaimer' || title === 'Privacy Policy' ? <><h1>{title}</h1> <p>Last Modified: {lastmod}</p></> : null}
-      <MDXRenderer>
-        {body}
-      </MDXRenderer>
+      <MDXProvider components={shortcodes}>
+        <MDXRenderer>{body}</MDXRenderer>
+      </MDXProvider>
     </Layout>
   )
 }

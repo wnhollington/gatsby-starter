@@ -19,3 +19,7 @@
 article p {
     @apply my-4
 }
+
+main p {
+    @apply my-4
+}
