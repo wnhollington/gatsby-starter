@@ -13,10 +13,9 @@ const Page = ({ data }) => {
 
   return (
     <Layout>
-      <h1>{title}</h1>
-      <p>Last Modified: {lastmod}</p>
+      {title === 'Disclaimer' || title === 'Privacy Policy' ? <><h1>{title}</h1> <p>Last Modified: {lastmod}</p></> : null}
       <MDXRenderer>
-          {body}
+        {body}
       </MDXRenderer>
     </Layout>
   )

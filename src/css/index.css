@@ -16,3 +16,6 @@
 @tailwind utilities;
 
 /* Custom CSS */
+article p {
+    @apply my-4
+}
