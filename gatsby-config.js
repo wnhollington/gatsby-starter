@@ -72,6 +72,58 @@ module.exports = {
         apiKey: process.env.ALGOLIA_ADMIN_KEY,
         queries: require("./src/utils/algolia-queries")
       },
-    }
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                title
+                siteUrl
+                description
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMdx} }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node, {
+                  title: edge.node.frontmatter.title,
+                  description: edge.node.frontmatter.description,
+                  date: edge.node.frontmatter.lastmod,
+                  category: edge.node.frontmatter.category,
+                  slug: edge.node.frontmatter.slug,
+                  url: `${site.siteMetadata.siteUrl}/blog/${slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/blog/${slug}`,
+                })
+              })
+            },
+            query: `
+              {
+                allMdx(filter: {frontmatter: {type: {eq: "article"}}}){
+                  edges {
+                    node {
+                      frontmatter {
+                        title
+                        slug
+                        description
+                        category
+                        lastmod
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: "/rss.xml",
+            title: "RSS Feed",
+          },
+        ],
+      },
+    },
   ]
 };
