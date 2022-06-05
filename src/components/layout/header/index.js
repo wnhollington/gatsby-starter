@@ -3,7 +3,7 @@ import * as React from 'react'
 // Components
 import Logo from './logo'
 import Nav from '../navigation/nav'
-import SignupModal from './signup-modal';
+import SignupModal from './signup-modal'
 import NavDropdown from '../navigation/nav-dropdown'
 
 const Header = () => {

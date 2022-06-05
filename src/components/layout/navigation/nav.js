@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 // Constants
 const isActive = ({ isCurrent }) => {
-  return isCurrent ? { className: "font-medium tracking-wide text-purple-700 transition-colors duration-200 hover:text-purple-400" } : {className: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"}
+  return isCurrent ? { className: "font-medium tracking-wide text-indigo-700 transition-colors duration-200 hover:text-indigo-400" } : {className: "font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-indigo-400"}
 }
 
 const ExactNavLink = props => (

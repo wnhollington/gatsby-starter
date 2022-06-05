@@ -29,7 +29,7 @@ const Footer = () => {
               href="tel:850-123-5021"
               aria-label="Our phone"
               title="Our phone"
-              className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              className="transition-colors duration-300 text-deep-indigo-accent-400 hover:text-deep-indigo-800"
             >
               850-123-5021
             </a>
@@ -40,7 +40,7 @@ const Footer = () => {
               href="mailto:info@lorem.mail"
               aria-label="Our email"
               title="Our email"
-              className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              className="transition-colors duration-300 text-deep-indigo-accent-400 hover:text-deep-indigo-800"
             >
               info@lorem.mail
             </a>
@@ -54,7 +54,7 @@ const Footer = () => {
           <div className="flex items-center mt-1 space-x-3">
             <a
               href="https://twitter.com/"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400"
+              className="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -65,7 +65,7 @@ const Footer = () => {
             </a>
             <a
               href="https://linkedin.com/in/wnhollington"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400"
+              className="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -76,7 +76,7 @@ const Footer = () => {
             </a>
                         <a
               href="https://feedly.com"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400"
+              className="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -98,7 +98,7 @@ const Footer = () => {
           <li>
             <a
               href="https://gatsbyjs.com"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400"
+              className="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -109,7 +109,7 @@ const Footer = () => {
           <li>
             <a
               href="https://github.com"
-              className="text-gray-500 transition-colors duration-300 hover:text-purple-400"
+              className="text-gray-500 transition-colors duration-300 hover:text-indigo-400"
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -122,7 +122,7 @@ const Footer = () => {
           <li>
             <Link
               to="/privacy-policy"
-              className="text-sm text-gray-600 transition-colors duration-300 hover:text-purple-400"
+              className="text-sm text-gray-600 transition-colors duration-300 hover:text-indigo-400"
             >
               Privacy Policy
             </Link>
@@ -130,7 +130,7 @@ const Footer = () => {
           <li>
             <Link
               to="/disclaimer"
-              className="text-sm text-gray-600 transition-colors duration-300 hover:text-purple-400"
+              className="text-sm text-gray-600 transition-colors duration-300 hover:text-indigo-400"
             >
               Diclaimer
             </Link>
