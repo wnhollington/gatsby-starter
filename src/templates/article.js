@@ -5,14 +5,17 @@ import { Link } from 'gatsby'
 
 // Components
 import Layout from '../components/layout'
+import ShareButtons from '../components/elements/share-buttons'
 
 // Render
 const Article = ({ data, pageContext }) => {
+  const siteUrl = data.site.siteMetadata.siteUrl
   const title = data.mdx.frontmatter.title
   const lastmod = data.mdx.frontmatter.lastmod
   const description = data.mdx.frontmatter.description
   const img = data.mdx.frontmatter.img
   const body = data.mdx.body
+  const slug = data.mdx.frontmatter.slug
   const timeToRead = data.mdx.timeToRead
   const { previous, next } = pageContext
 
@@ -71,6 +74,8 @@ const Article = ({ data, pageContext }) => {
             </Link>
         </nav>
 
+        <ShareButtons url={`${siteUrl}/blog/${slug}`} title={title} description={description} />
+
     </Layout>
   )
 }
@@ -90,6 +95,11 @@ export const query = graphql`
         }
         body
         timeToRead
+    }
+    site {
+        siteMetadata {
+            siteUrl
+        }
     }
   }
 `
