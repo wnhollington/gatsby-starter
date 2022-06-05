@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
                 jumps over{' '}
                 <span className="relative px-1">
                   <div className="absolute inset-x-0 bottom-0 h-3 transform -skew-x-12 bg-teal-400" />
-                  <span className="relative inline-block text-purple-400">
+                  <span className="relative inline-block text-indigo-400">
                     a lazy dog
                   </span>
                 </span>
@@ -35,14 +35,14 @@ const IndexPage = ({ data }) => {
             <div className="grid gap-5 row-gap-8 sm:grid-cols-2">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-indigo-400 hover:bg-indigo-700 focus:shadow-outline focus:outline-none"
               >
                 Subscribe
               </button>
               <Link
                 to="/about"
                 aria-label=""
-                className="inline-flex items-center font-semibold transition-colors duration-200 text-purple-400 hover:text-purple-800"
+                className="inline-flex items-center font-semibold transition-colors duration-200 text-indigo-400 hover:text-indigo-800"
               >
                 Learn More
                 <svg
@@ -111,7 +111,7 @@ const IndexPage = ({ data }) => {
         <div className="text-center">
           <Link
             to="/blog"
-            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-purple-400 hover:bg-purple-700 focus:shadow-outline focus:outline-none"
+            className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-indigo-400 hover:bg-indigo-700 focus:shadow-outline focus:outline-none"
           >
             View All
           </Link>
@@ -127,9 +127,9 @@ const IndexPage = ({ data }) => {
               
               <div class="mt-8 lg:mt-0">
                   <div class="flex flex-col space-y-3 sm:space-y-0 sm:flex-row sm:-mx-2">
-                      <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md sm:mx-2 focus:border-purple-400 focus:ring-purple-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email Address"/>
+                      <input id="email" type="text" class="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-md sm:mx-2 focus:border-indigo-400 focus:ring-indigo-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email Address"/>
                       
-                      <button class="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-purple-700 rounded-md focus:ring focus:ring-purple-300 focus:ring-opacity-80 fo sm:mx-2 hover:bg-purple-600 focus:outline-none focus:bg-purple-600">
+                      <button class="px-4 py-2 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-indigo-700 rounded-md focus:ring focus:ring-indigo-300 focus:ring-opacity-80 fo sm:mx-2 hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
                           Get Started
                       </button>
                   </div>

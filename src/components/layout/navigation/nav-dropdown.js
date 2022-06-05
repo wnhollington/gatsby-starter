@@ -13,7 +13,7 @@ const NavDropdown = () => {
             <button
             aria-label="Open Menu"
             title="Open Menu"
-            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
+            className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-indigo-50 focus:bg-deep-indigo-50"
             onClick={() => setIsMenuOpen(true)}
             >
                 <svg className="w-5 text-gray-600" viewBox="0 0 24 24">
@@ -59,7 +59,7 @@ const NavDropdown = () => {
                         to="/about"
                         aria-label="About"
                         title="About"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-indigo-400"
                         >
                         About
                         </Link>
@@ -69,7 +69,7 @@ const NavDropdown = () => {
                         to="/blog"
                         aria-label="Blog"
                         title="Blog"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-indigo-400"
                         >
                         Blog
                         </Link>
@@ -79,7 +79,7 @@ const NavDropdown = () => {
                         to="/contact"
                         aria-label="Contact"
                         title="Contact"
-                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-purple-400"
+                        className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-indigo-400"
                         >
                         Contact
                         </Link>

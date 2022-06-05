@@ -11,7 +11,7 @@ const Logo = () => {
         className="inline-flex items-center"
     >
         <svg
-        className="w-8 text-purple-400"
+        className="w-8 text-indigo-400"
         viewBox="0 0 24 24"
         strokeLinejoin="round"
         strokeWidth="2"
