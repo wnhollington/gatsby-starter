@@ -81,8 +81,9 @@ module.exports = {
             site {
               siteMetadata {
                 title
-                siteUrl
                 description
+                siteUrl
+                site_url: siteUrl
               }
             }
           }
@@ -94,11 +95,8 @@ module.exports = {
                 return Object.assign({}, edge.node, {
                   title: edge.node.frontmatter.title,
                   description: edge.node.frontmatter.description,
-                  date: edge.node.frontmatter.lastmod,
-                  category: edge.node.frontmatter.category,
-                  slug: edge.node.frontmatter.slug,
-                  url: `${site.siteMetadata.siteUrl}/blog/${slug}`,
-                  guid: `${site.siteMetadata.siteUrl}/blog/${slug}`,
+                  url: `${site.siteMetadata.siteUrl}/blog/${edge.node.frontmatter.slug}`,
+                  guid: `${site.siteMetadata.siteUrl}/blog/${edge.node.frontmatter.slug}`,
                 })
               })
             },
@@ -111,8 +109,6 @@ module.exports = {
                         title
                         slug
                         description
-                        category
-                        lastmod
                       }
                     }
                   }
