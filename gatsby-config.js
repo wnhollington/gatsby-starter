@@ -6,14 +6,18 @@ module.exports = {
   siteMetadata: {
     title: `My Gatsby Site`,
     siteUrl: `https://www.yourdomain.tld`,
-    description: ``
+    description: ``,
+    contact: {
+      phone: `303-799-9983`,
+      email: `neal.hollington@hallboothsmith.com`
+    }
   },
   plugins: [
     "gatsby-plugin-postcss", 
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
-        "trackingId": "123" // Update
+        "trackingId": "UA-111111111-1" // Update
       }
     }, 
     "gatsby-plugin-image", 
