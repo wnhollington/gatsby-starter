@@ -1,10 +1,17 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 
+// Hooks
+import { useSiteMetadata } from "../../../hooks/use-site-metadata"
+
 // Components
 import Logo from '../header/logo'
 
 const Footer = () => {
+  const siteMetadata = useSiteMetadata()
+  const description = siteMetadata.description
+  const contact = siteMetadata.contact
+  
   return (
     <footer className="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="grid gap-10 row-gap-6 mb-8 sm:grid-cols-2 lg:grid-cols-4">
@@ -13,8 +20,7 @@ const Footer = () => {
           <Logo />
           <div className="mt-6 lg:max-w-sm">
             <p className="text-sm text-gray-800">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
+              {description}
             </p>
           </div>
         </div>
@@ -26,23 +32,23 @@ const Footer = () => {
           <div className="flex">
             <p className="mr-1 text-gray-800">Phone:</p>
             <a
-              href="tel:850-123-5021"
-              aria-label="Our phone"
-              title="Our phone"
+              href={contact.phone}
+              aria-label="phone"
+              title="phone"
               className="transition-colors duration-300 text-deep-indigo-accent-400 hover:text-deep-indigo-800"
             >
-              850-123-5021
+              {contact.phone}
             </a>
           </div>
           <div className="flex">
             <p className="mr-1 text-gray-800">Email:</p>
             <a
-              href="mailto:info@lorem.mail"
-              aria-label="Our email"
-              title="Our email"
+              href={`mailto:${contact.email}`}
+              aria-label="email"
+              title="email"
               className="transition-colors duration-300 text-deep-indigo-accent-400 hover:text-deep-indigo-800"
             >
-              info@lorem.mail
+              {contact.email}
             </a>
           </div>
         </div>
